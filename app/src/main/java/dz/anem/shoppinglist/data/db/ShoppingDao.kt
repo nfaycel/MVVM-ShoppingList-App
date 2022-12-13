@@ -7,7 +7,7 @@ import dz.anem.shoppinglist.data.db.entities.ShoppingItem
 @Dao
 interface ShoppingDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun upsert(item: ShoppingItem)
+    suspend fun upsert(item: ShoppingItem)
 
     @Delete
     suspend fun delete(item: ShoppingItem)
